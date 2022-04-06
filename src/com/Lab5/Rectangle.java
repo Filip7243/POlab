@@ -14,11 +14,11 @@ public class Rectangle {
         return this.width * this.height;
     }
 
-    private double getCircuit() {
+    public double getCircuit() {
         return (this.width * 2) + (this.height * 2);
     }
 
-    private double getDiagonal() {
+    public double getDiagonal() {
         return Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2));
     }
 
