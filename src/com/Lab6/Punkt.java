@@ -24,7 +24,7 @@ public class Punkt {
         System.out.println("(" + this.x + "," + this.y + ")");
     }
 
-    public void przesun(int x, int y) {
+    public void przesun(double x, double y) {
         this.x += x;
         this.y += y;
     }
