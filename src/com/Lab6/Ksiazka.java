@@ -6,21 +6,27 @@ public class Ksiazka {
     private String autor;
     private String wydawnictwo;
     private int rokWydania;
+    private int iloscStron;
+    private int cena;
 
-    public Ksiazka(String tytul, String autor, String wydawnictwo, int rokWydania) {
+    public Ksiazka(String tytul, String autor, String wydawnictwo, int rokWydania,
+                   int iloscStron, int cena) {
         this.tytul = tytul;
         this.autor = autor;
         this.wydawnictwo = wydawnictwo;
         this.rokWydania = rokWydania;
+        this.iloscStron = iloscStron;
+        this.cena = cena;
     }
 
     public String opis() {
-        return "Ksiazka {" +
-                "tytul='" + tytul + '\'' +
-                ", autor='" + autor + '\'' +
-                ", wydawnictwo='" + wydawnictwo + '\'' +
-                ", rokWydania=" + rokWydania +
-                '}';
+        return getClass().getSimpleName() + "\n" +
+                "tytul=" + tytul + "\n" +
+                ", autor=" + autor + "\n" +
+                ", wydawnictwo=" + wydawnictwo + "\n" +
+                ", rokWydania=" + rokWydania + "\n" +
+                ", iloscStron=" + iloscStron + "\n" +
+                ", cena=" + cena;
     }
 
     public String getTytul() {
@@ -53,5 +59,21 @@ public class Ksiazka {
 
     public void setRokWydania(int rokWydania) {
         this.rokWydania = rokWydania;
+    }
+
+    public int getIloscStron() {
+        return iloscStron;
+    }
+
+    public void setIloscStron(int iloscStron) {
+        this.iloscStron = iloscStron;
+    }
+
+    public int getCena() {
+        return cena;
+    }
+
+    public void setCena(int cena) {
+        this.cena = cena;
     }
 }
