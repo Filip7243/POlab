@@ -6,9 +6,12 @@ public class Main {
         Samolot samolot = new Samolot();
         Statek statek = new Statek();
         Samochod samochod = new Samochod();
-        
+
         samochod.jedz();
         samolot.latanie();
         statek.plynie();
+
+        Wieloryb wieloryb = new Wieloryb();
+
     }
 }
