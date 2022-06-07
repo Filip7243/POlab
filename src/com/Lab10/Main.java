@@ -53,30 +53,48 @@ public class Main {
         // dla klasy Stos
 
         Stos<String> stos = new Stos<>();
-        String s = "+B+a+ł---+a+g+a---+n-+w-+l+i+t---+e-+r+k--+a+c+h---";
-        String[] sTab = s.split("");
-        for (int i = sTab.length - 1; i >= 0; i--) {
-            stos.push(sTab[i]);
+        String m = "+B+a+ł---+a+g+a---+n-+w-+l+i+t---+e-+r+k--+a+c+h---";
+        String[] sTab = m.split("");
+
+        for (int i = 0; i < sTab.length; i++) {
+            if(sTab[i].equals("+")) {
+                stos.push(sTab[i+1]);
+            }
+            if(sTab[i].equals("-")) {
+                System.out.print(stos.pop());
+            }
+        }
+        System.out.println();
+
+        // zad4
+        String[] products = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};
+        Stos<String> s = new Stos<>();
+        Random r = new Random();
+        int n = r.nextInt(15)+1;
+//        System.out.println(n);
+        for(int i = 0; i < n; i++){
+            if(i == products.length) {
+                i = 0;
+            }
+            s.push(products[i]);
         }
 
-        int pluses = 0;
-        int minuses = 0;
-        while (!stos.isEmpty()) {
-            if(stos.peek().equals("+")) {
-                pluses += 1;
-                stos.pop();
-                continue;
+        Queue<String> k = new LinkedList<>();
+        for(int i = 0; i < 10; i++) {
+            if(i == 7) {
+                k.add("ja");
             }
-            for(int i = 0; i < pluses; i++) {
-                System.out.println(stos.pop());
-            }
-            if(stos.peek().equals("-")) {
-                minuses += 1;
-                stos.pop();
-                continue;
-            }
-            for(int i = 0; i < minuses; i++) {
-                System.out.println(stos.pop());
+            k.add(i+"o");
+        }
+
+        while(!k.isEmpty()) {
+            if(k.peek().equals("ja")) {
+                while(!s.isEmpty()){
+                    System.out.print(s.pop());
+                }
+                k.poll();
+            }else {
+                k.poll();
             }
         }
 
